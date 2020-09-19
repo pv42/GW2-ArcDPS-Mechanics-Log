@@ -110,14 +110,12 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <PostBuildEvent>
-      <Command>CertUtil -hashfile "$(TargetPath)" MD5|find /v "MD5 hash of"|find /v "CertUtil" &gt; "$(TargetPath).md5sum"
-copy /Y "$(TargetPath)" "C:\Program Files\Guild Wars 2\bin64\$(TargetFileName)"</Command>
+      <Command>CertUtil -hashfile "$(TargetPath)" MD5|find /v "MD5 hash of"|find /v "CertUtil" &gt; "$(TargetPath).md5sum"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <PostBuildEvent>
-      <Command>CertUtil -hashfile "$(TargetPath)" MD5|find /v "MD5 hash of"|find /v "CertUtil" &gt; "$(TargetPath).md5sum"
-copy /Y "$(TargetPath)" "C:\Program Files\Guild Wars 2\bin64\$(TargetFileName)"</Command>
+      <Command>CertUtil -hashfile "$(TargetPath)" MD5|find /v "MD5 hash of"|find /v "CertUtil" &gt; "$(TargetPath).md5sum"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
