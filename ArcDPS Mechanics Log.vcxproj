@@ -112,11 +112,17 @@
     <PostBuildEvent>
       <Command>CertUtil -hashfile "$(TargetPath)" MD5|find /v "MD5 hash of"|find /v "CertUtil" &gt; "$(TargetPath).md5sum"</Command>
     </PostBuildEvent>
+    <Link>
+      <Version>1.0</Version>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <PostBuildEvent>
       <Command>CertUtil -hashfile "$(TargetPath)" MD5|find /v "MD5 hash of"|find /v "CertUtil" &gt; "$(TargetPath).md5sum"</Command>
     </PostBuildEvent>
+    <Link>
+      <Version>1.0</Version>
+    </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="bin\debug\libd3d9_arcdps_mechanics.def" />
