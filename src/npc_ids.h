@@ -78,6 +78,9 @@ extern Boss boss_skorvald;
 extern Boss boss_artsariiv;
 extern Boss boss_arkk;
 
+//Sunqua Peak
+extern Boss boss_ai;
+
 //Strike Missions
 extern Boss boss_icebrood_construct;
 extern Boss boss_voice_and_claw;

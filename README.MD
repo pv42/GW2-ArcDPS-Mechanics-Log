@@ -133,56 +133,72 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
       - cone knockback
       - getting a bomb
       - getting a green circle
+  - Sunqua Peak
+    - Ai, Keeper of the Peak
+      - Elemental Dash/Surge of Darkness
+      - Call Meteor 
+      - Firestorm (instant down)
+      - Volatile Waters (Whirlpool?)
+      - Elemental Manipulation/Emphatic Manipulation/Negative Burst (summoned aoes)
+      - Fulgor Sphere/Roiling Flames/Torrential Bolt/Focused Wrath (summoned bolts)
+      
 - Strike Missions
   - Icebrood Construct
     - Ice Shock Wave
     - Deadly Ice Shockwave (knockdown)
     - Shatter Arm (knockdown)
   - Voice and Claw
-	- Hammer Slam (knockdown)
-	- Hammer Spin (launch)
-	- Trapped	
+    - Hammer Slam (knockdown)
+    - Hammer Spin (launch)
+    - Trapped   
   - Fraenir of Jormag
     - Icequake (knockdown)
-	- Torrent of Ice (freeze)
+    - Torrent of Ice (freeze)
     - Ice Shock Wave/Seismic Crush (knockdown)
-	- Ice Flail (knockdown)
-    - Shatter Arm (knockdown)	
+    - Ice Flail (knockdown)
+    - Shatter Arm (knockdown)   
   - Boneskinner
     - Grasp (AoE at player's feet)
-	- Charge (knockdown)
+    - Charge (knockdown)
   - Cold War
     - Icy Echoes
-	- Flash Freeze (freeze)
-	- Call Assassins
-	- Flame Wall
-	- Charge! (knockdown)
-	- Detonate
-	
+    - Flash Freeze (freeze)
+    - Call Assassins
+    - Flame Wall
+    - Charge! (knockdown)
+    - Detonate
+    
 # Changelog:
     September 19 2020
         Added tracking for:
             Icebrood Construct
-				Ice Shock Wave
-				Deadly Ice Shockwave (knockdown)
-				Shatter Arm (knockdown)
-			Voice and Claw
-				Hammer Slam (knockdown)
-				Hammer Spin (launch)
-				Trapped
-		    Fraenir of Jormag
-				Icequake (knockdown)
-				Torrent of Ice (freeze)
-				Ice Shock Wave/Seismic Crush (knockdown)
-				Ice Flail (knockdown)
-				Shatter Arm (knockdown)		
-			Boneskinner
-				Grasp (AoE at player's feet)
-				Charge (knockdown)
-		    Cold War
-				Icy Echoes
-				Flash Freeze (freeze)
-				Call Assassins
-				Flame Wall
-				Charge! (knockdown)
-				Detonate				
+                Ice Shock Wave
+                Deadly Ice Shockwave (knockdown)
+                Shatter Arm (knockdown)
+            Voice and Claw
+                Hammer Slam (knockdown)
+                Hammer Spin (launch)
+                Trapped
+            Fraenir of Jormag
+                Icequake (knockdown)
+                Torrent of Ice (freeze)
+                Ice Shock Wave/Seismic Crush (knockdown)
+                Ice Flail (knockdown)
+                Shatter Arm (knockdown)     
+            Boneskinner
+                Grasp (AoE at player's feet)
+                Charge (knockdown)
+            Cold War
+                Icy Echoes
+                Flash Freeze (freeze)
+                Call Assassins
+                Flame Wall
+                Charge! (knockdown)
+                Detonate        
+            Ai, Keeper of the Peak (maybe)
+                Elemental Dash/Surge of Darkness
+                Call Meteor 
+                Firestorm (instant down)
+                Volatile Waters (Whirlpool?)
+                Elemental Manipulation/Emphatic Manipulation/Negative Burst (summoned aoes)
+                Fulgor Sphere/Roiling Flames/Torrential Bolt/Focused Wrath (summoned bolts)             
