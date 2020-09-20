@@ -144,6 +144,10 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
       
 - Strike Missions
   - Icebrood Construct
+    - Ice Arm Swing
+    - Ice Shatter (Ice Orbs)
+    - Ice Crystal
+    - Ice Flail
     - Ice Shock Wave
     - Deadly Ice Shockwave (knockdown)
     - Shatter Arm (knockdown)
@@ -160,8 +164,10 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
   - Boneskinner
     - Grasp (AoE at player's feet)
     - Charge (knockdown)
+    - Death Wind (launch)
   - Cold War
     - Icy Echoes
+    - Lethal Coalescence
     - Flash Freeze (freeze)
     - Call Assassins
     - Flame Wall
@@ -170,6 +176,7 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
     
 # Changelog:
     September 20 2020
+        Added in game links as the tooltip for abilities in Strikes and Sunqua Peak when available
         Cleaned up Sorrowful Spellcaster (Ai, Keeper of the Peak) mechanics
             Changed tracking to:
                 Red Circle 
@@ -177,7 +184,18 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
                 Wind/Fire(todo)/Water(todo)/Laser(todo) blades (intersect center of arena during split)
                 Call Meteor 
                 Firestorm
-                Fear (todo)                
+                Fear (todo)    
+        Added additional mechanics tracked by Elite Insights:
+            Icebrood Construct
+                Ice Arm Swing
+                Ice Shatter (Ice Orbs)
+                Ice Crystal
+                Ice Flail
+            Boneskinner
+                Death Wind
+            Cold War
+                Lethal Coalescence
+                
     September 19 2020
         Added tracking for:
             Icebrood Construct
