@@ -170,51 +170,30 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
     - Charge! (knockdown)
     - Detonate
     
-# Missing IDs
-    Sunqua Peak
-        Sorrowful Spellcaster
-            - Fire blades (Elemental Manipulation, intersecting at center)
-            - Water blades (Elemental Manipulation, intersecting at center)
-            - Laser blades (Emphatic Manipulation, intersecting at center)
-            - Fear (ghosts)
+# Known Issues:
+    Missing Skill IDs to track:
+        Sunqua Peak
+            Sorrowful Spellcaster
+                - Fire blades (Elemental Manipulation, intersecting at center)
+                - Water blades (Elemental Manipulation, intersecting at center)
+                - Laser blades (Emphatic Manipulation, intersecting at center)
+                - Fear (ghosts)
 
 # Changelog:
     September 20 2020
         Added in game links as the tooltip for abilities in Strikes and Sunqua Peak when available
-        Cleaned up Sorrowful Spellcaster (Ai, Keeper of the Peak) mechanics
-            Changed tracking to:
-                Red Circle 
-                Windspheres/Fireballs/Whirlpools/Laser (summoned during dashes)
-                Wind blades (intersect center of arena during split)
-                Call Meteor 
-                Firestorm 
-        Added additional mechanics tracked by Elite Insights:
-            Icebrood Construct
-                Ice Arm Swing
-                Ice Shatter (Ice Orbs)
-                Ice Crystal
-                Ice Flail
-            Boneskinner
-                Death Wind
-            Cold War
-                Lethal Coalescence
-        Removed the following mechanics:
-            Voice and Claw
-                Trapped (not working)
-            Cold War
-                Icy Echoes (too many procs)
-                Flash Freeze (not working)
-                
-    September 19 2020
         Added tracking for:
             Icebrood Construct
                 Ice Shock Wave
                 Deadly Ice Shockwave (knockdown)
                 Shatter Arm (knockdown)
+                Ice Arm Swing
+                Ice Shatter (Ice Orbs)
+                Ice Crystal
+                Ice Flail
             Voice and Claw
                 Hammer Slam (knockdown)
                 Hammer Spin (launch)
-                Trapped
             Fraenir of Jormag
                 Icequake (knockdown)
                 Torrent of Ice (freeze)
@@ -224,17 +203,16 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
             Boneskinner
                 Grasp (AoE at player's feet)
                 Charge (knockdown)
+                Death Wind
             Cold War
-                Icy Echoes
-                Flash Freeze (freeze)
                 Call Assassins
                 Flame Wall
                 Charge! (knockdown)
                 Detonate        
-            Ai, Keeper of the Peak (maybe)
-                Elemental Dash/Surge of Darkness
+                Lethal Coalescence
+            Ai, Keeper of the Peak 
+                Red Circle 
+                Windspheres/Fireballs/Whirlpools/Laser (summoned during dashes)
+                Wind blades (intersect center of arena during split)
                 Call Meteor 
-                Firestorm (instant down)
-                Volatile Waters (Whirlpool?)
-                Elemental Manipulation/Emphatic Manipulation/Negative Burst (summoned aoes)
-                Fulgor Sphere/Roiling Flames/Torrential Bolt/Focused Wrath (summoned bolts)             
+                Firestorm         
