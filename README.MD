@@ -163,6 +163,12 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
     - Grasp (AoE at player's feet)
     - Charge (knockdown)
     - Death Wind (launch)
+  - Whisper of Jormag
+    - Chains of Frost (target and hits)
+    - Spreading Ice
+    - Icy Slice
+    - Icy Tempest (tornado)
+    - Lethal Coalescence
   - Cold War
     - Lethal Coalescence
     - Call Assassins
@@ -209,6 +215,12 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
                 Flame Wall
                 Charge! (knockdown)
                 Detonate        
+                Lethal Coalescence
+            Whisper of Jormag
+                Chains of Frost (target and hits)
+                Spreading Ice
+                Icy Slice
+                Icy Tempest (tornado)
                 Lethal Coalescence
             Ai, Keeper of the Peak 
                 Red Circle 

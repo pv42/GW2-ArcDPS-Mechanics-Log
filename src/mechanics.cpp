@@ -598,6 +598,15 @@ std::vector<Mechanic>& getMechanics()
 		Mechanic("was hit by charge", {58851}, &boss_boneskinner, true, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Charge", ""),
 		Mechanic("was launched by wind", {58546}, & boss_boneskinner, true, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Death Wind", "[&BrLkAAA=]"),
 
+		//Whisper of Jormag
+		Mechanic("was hit by a slice", {59076}, &boss_whisper, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Icy Slice", ""),
+		Mechanic("was hit by a tornado", {59255}, &boss_whisper, false, false, verbosity_chart, false, true, target_location_dst, 5000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Ice Tempest", "[&BnfnAAA=]"),
+		Mechanic("has chains", {59120}, &boss_whisper, false, true, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Chains of Frost", "[&BhfnAAA=]"),
+		Mechanic("was hit by chains", {59159}, &boss_whisper, true, true, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Chains of Frost", "[&BhfnAAA=]"),
+		Mechanic("was hit by own aoe", {59102}, & boss_whisper, true, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Spreading Ice", "[&Bt7mAAA=]"),
+		Mechanic("was hit by other's aoe", {59468}, &boss_whisper, true, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Spreading Ice", "[&BkzoAAA=]"),
+		Mechanic("soaked damage", {59441}, &boss_whisper, false, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Lethal Coalescence", "[&BjHoAAA=]"),
+
 		//Cold War
 		//too many procs Mechanic("was hit by icy echoes", {60354}, &boss_coldwar, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Icy Echoes", "[&BsLrAAA=]"), 
 		//not working Mechanic("was frozen", {60371}, &boss_coldwar, true, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Flash Freeze", ""), 
