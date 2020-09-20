@@ -74,6 +74,7 @@ Boss boss_arkk = Boss().setIds({ 0x455F }).setHealth(9942250).setName("Arkk");//
 
 //Strike Missions
 Boss boss_icebrood_construct = Boss().setIds({ 22154, 22436 }).setTimer(12 * 60 * 1000).setHealth(11698890).setName("Icebrood Construct");
+Boss boss_voice_and_claw = Boss().setIds({ 22343, 22481, 22315 }).setTimer(10 * 60 * 1000).setHealth(8258040).setName("Voice of the Fallen and Claw of the Fallen");
 
 std::list<Boss*> bosses =
 {
@@ -106,4 +107,5 @@ std::list<Boss*> bosses =
 	&boss_artsariiv,
 	&boss_arkk,
 	&boss_icebrood_construct,
+	&boss_voice_and_claw,
 };

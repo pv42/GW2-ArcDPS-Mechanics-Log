@@ -4,7 +4,6 @@
 See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Mechanics-Log)
 
 # Mechanics Logged
-
 - Vale Guardian
   - teleport
 - Gorseval
@@ -139,12 +138,19 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
     - Ice Shock Wave
     - Deadly Ice Shockwave (knockdown)
     - Shatter Arm (knockdown)
+  - Voice and Claw
+	- Hammer Slam (knockdown)
+	- Hammer Spin (launch)
+	- Trapped	
 
 # Changelog:
-
     September 19 2020
         Added tracking for:
             Icebrood Construct
 				Ice Shock Wave
 				Deadly Ice Shockwave (knockdown)
 				Shatter Arm (knockdown)
+			Voice and Claw
+				Hammer Slam (knockdown)
+				Hammer Spin (launch)
+				Trapped
