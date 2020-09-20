@@ -72,7 +72,7 @@ Boss boss_skorvald = Boss().setIds({ 0x44E0 }).setHealth(5551340).setName("Skorv
 Boss boss_artsariiv = Boss().setIds({ 0x461D }).setHealth(5962266).setName("Artsariiv");//TODO get normal mode id
 Boss boss_arkk = Boss().setIds({ 0x455F }).setHealth(9942250).setName("Arkk");//TODO get normal mode id
 //Sunqua Peak
-Boss boss_ai = Boss().setIds({ 23254 }).setHealth(14905666).setName("Varinia Stormsounder");
+Boss boss_ai = Boss().setIds({ 23254 }).setHealth(14905666).setName("Sorrowful Spellcaster");
 
 //Strike Missions
 Boss boss_icebrood_construct = Boss().setIds({ 22154, 22436 }).setTimer(12 * 60 * 1000).setHealth(11698890).setName("Icebrood Construct");

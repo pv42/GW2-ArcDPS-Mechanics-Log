@@ -135,12 +135,12 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
       - getting a green circle
   - Sunqua Peak
     - Ai, Keeper of the Peak
-      - Elemental Dash/Surge of Darkness
+      - Red Circle 
+      - Windspheres/Fireballs/Whirlpools/Laser (summoned during dashes)
+      - Wind/Fire(todo)/Water(todo)/Laser(todo) blades (intersect center of arena during split)
       - Call Meteor 
-      - Firestorm (instant down)
-      - Volatile Waters (Whirlpool?)
-      - Elemental Manipulation/Emphatic Manipulation/Negative Burst (summoned aoes)
-      - Fulgor Sphere/Roiling Flames/Torrential Bolt/Focused Wrath (summoned bolts)
+      - Firestorm
+      - Fear (todo)   
       
 - Strike Missions
   - Icebrood Construct
@@ -169,6 +169,15 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
     - Detonate
     
 # Changelog:
+    September 20 2020
+        Cleaned up Sorrowful Spellcaster (Ai, Keeper of the Peak) mechanics
+            Changed tracking to:
+                Red Circle 
+                Windspheres/Fireballs/Whirlpools/Laser (summoned during dashes)
+                Wind/Fire(todo)/Water(todo)/Laser(todo) blades (intersect center of arena during split)
+                Call Meteor 
+                Firestorm
+                Fear (todo)                
     September 19 2020
         Added tracking for:
             Icebrood Construct
