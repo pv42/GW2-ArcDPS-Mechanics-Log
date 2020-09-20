@@ -151,6 +151,13 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
   - Boneskinner
     - Grasp (AoE at player's feet)
 	- Charge (knockdown)
+  - Cold War
+    - Icy Echoes
+	- Flash Freeze (freeze)
+	- Call Assassins
+	- Flame Wall
+	- Charge! (knockdown)
+	- Detonate
 	
 # Changelog:
     September 19 2020
@@ -172,3 +179,10 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
 			Boneskinner
 				Grasp (AoE at player's feet)
 				Charge (knockdown)
+		    Cold War
+				Icy Echoes
+				Flash Freeze (freeze)
+				Call Assassins
+				Flame Wall
+				Charge! (knockdown)
+				Detonate				

@@ -83,5 +83,6 @@ extern Boss boss_icebrood_construct;
 extern Boss boss_voice_and_claw;
 extern Boss boss_fraenir;
 extern Boss boss_boneskinner;
+extern Boss boss_coldwar;
 
 extern std::list<Boss*> bosses;
