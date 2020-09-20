@@ -78,4 +78,7 @@ extern Boss boss_skorvald;
 extern Boss boss_artsariiv;
 extern Boss boss_arkk;
 
+//Strike Missions
+extern Boss boss_icebrood_construct;
+
 extern std::list<Boss*> bosses;
