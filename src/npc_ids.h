@@ -81,5 +81,6 @@ extern Boss boss_arkk;
 //Strike Missions
 extern Boss boss_icebrood_construct;
 extern Boss boss_voice_and_claw;
+extern Boss boss_fraenir;
 
 extern std::list<Boss*> bosses;

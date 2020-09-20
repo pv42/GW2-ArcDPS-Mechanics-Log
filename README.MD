@@ -142,6 +142,12 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
 	- Hammer Slam (knockdown)
 	- Hammer Spin (launch)
 	- Trapped	
+  - Fraenir of Jormag
+    - Icequake (knockdown)
+	- Torrent of Ice (freeze)
+    - Ice Shock Wave/Seismic Crush (knockdown)
+	- Ice Flail (knockdown)
+    - Shatter Arm (knockdown)	
 
 # Changelog:
     September 19 2020
@@ -154,3 +160,9 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
 				Hammer Slam (knockdown)
 				Hammer Spin (launch)
 				Trapped
+		    Fraenir of Jormag
+				Icequake (knockdown)
+				Torrent of Ice (freeze)
+				Ice Shock Wave/Seismic Crush (knockdown)
+				Ice Flail (knockdown)
+				Shatter Arm (knockdown)					
