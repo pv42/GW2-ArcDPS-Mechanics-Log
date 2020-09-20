@@ -148,7 +148,10 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
     - Ice Shock Wave/Seismic Crush (knockdown)
 	- Ice Flail (knockdown)
     - Shatter Arm (knockdown)	
-
+  - Boneskinner
+    - Grasp (AoE at player's feet)
+	- Charge (knockdown)
+	
 # Changelog:
     September 19 2020
         Added tracking for:
@@ -165,4 +168,7 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
 				Torrent of Ice (freeze)
 				Ice Shock Wave/Seismic Crush (knockdown)
 				Ice Flail (knockdown)
-				Shatter Arm (knockdown)					
+				Shatter Arm (knockdown)		
+			Boneskinner
+				Grasp (AoE at player's feet)
+				Charge (knockdown)

@@ -82,5 +82,6 @@ extern Boss boss_arkk;
 extern Boss boss_icebrood_construct;
 extern Boss boss_voice_and_claw;
 extern Boss boss_fraenir;
+extern Boss boss_boneskinner;
 
 extern std::list<Boss*> bosses;
