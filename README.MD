@@ -177,13 +177,7 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
     - Detonate
     
 # Known Issues:
-    Missing Skill IDs to track:
-        Sunqua Peak
-            Sorrowful Spellcaster
-                - Fire blades (Elemental Manipulation, intersecting at center)
-                - Water blades (Elemental Manipulation, intersecting at center)
-                - Laser blades (Emphatic Manipulation, intersecting at center)
-                - Fear (ghosts)
+https://github.com/MerlinAesalon/GW2-ArcDPS-Mechanics-Log/issues
 
 # Changelog:
     September 20 2020
