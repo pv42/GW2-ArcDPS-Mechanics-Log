@@ -155,7 +155,7 @@ See the original project readme [here](https://github.com/MarsEdge/GW2-ArcDPS-Me
     - Hammer Spin (launch)
   - Fraenir of Jormag
     - Icequake (knockdown)
-    - Frozen Missle (launch)
+    - Frozen Missile (launch)
     - Torrent of Ice (freeze)
     - Ice Shock Wave/Seismic Crush (knockdown)
     - Ice Flail (knockdown)
@@ -185,7 +185,7 @@ https://github.com/MerlinAesalon/GW2-ArcDPS-Mechanics-Log/issues
         Removed game links from tooltip as they don't all work
         Added tracking for:
             Fraenir of Jormag
-                Frozen Missle (launch)
+                Frozen Missile (launch)
                 Fixed tracking of Frozen + Unfrozen as 2 Frozen hits
     September 20 2020
         Added in game links as the tooltip for abilities in Strikes and Sunqua Peak when available
