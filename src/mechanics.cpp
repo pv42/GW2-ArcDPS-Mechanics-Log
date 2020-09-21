@@ -549,72 +549,72 @@ std::vector<Mechanic>& getMechanics()
 		//Mechanic().setName("didn't block the goop").setIds({MECHANIC_ARKK_GOOP}).setBoss(&boss_arkk).setCanEvade(false),
 
 		//Sorrowful Spellcaster
-		Mechanic("stood in red circle", {61463}, &boss_ai, true, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Elemental Whirl", "[&BhfwAAA=]"),
+		Mechanic("stood in red circle", {61463}, &boss_ai, true, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Elemental Whirl", ""),
 		//Wind
-		Mechanic("was hit by a windsphere", {61487,61565}, &boss_ai, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Fulgor Sphere", "[&Bi/wAAA=]"),
-		Mechanic("was hit by wind blades", {61574}, &boss_ai, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Elemental Manipulation", "[&BobwAAA=]"),
-		//Mechanic("was launched in the air", {61205}, &boss_ai, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Wind Burst", "[&BhXvAAA=]"),
-		//Mechanic("stood in wind", {61470}, & boss_ai, false, false, verbosity_chart, false, true, target_location_dst, 5000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Volatile Wind", "[&Bh7wAAA=]"),
-		//Mechanic("was hit by lightning", {61190}, &boss_ai, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Call of Storms", "[&BgbvAAA=]"),
+		Mechanic("was hit by a windsphere", {61487,61565}, &boss_ai, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Fulgor Sphere", ""),
+		Mechanic("was hit by wind blades", {61574}, &boss_ai, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Elemental Manipulation", ""),
+		//Mechanic("was launched in the air", {61205}, &boss_ai, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Wind Burst", ""),
+		//Mechanic("stood in wind", {61470}, & boss_ai, false, false, verbosity_chart, false, true, target_location_dst, 5000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Volatile Wind", ""),
+		//Mechanic("was hit by lightning", {61190}, &boss_ai, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Call of Storms", ""),
 		//Fire
-		Mechanic("was hit by a fireball", {61273,61582}, &boss_ai, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Roiling Flames", "[&BlnvAAA=]"),
+		Mechanic("was hit by a fireball", {61273,61582}, &boss_ai, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Roiling Flames", ""),
 		//TODO: Mechanic("was hit by fire blades", {}, &boss_ai, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Elemental Manipulation", ""),
-		//Mechanic("stood in fire", {61548}, & boss_ai, false, false, verbosity_all, false, true, target_location_dst, 5000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Volatile Fire", "[&BmzwAAA=]"),
-		Mechanic("was hit by a meteor", {61348,61439}, &boss_ai, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Call Meteor", "[&BqTvAAA=]"),
-		Mechanic("was hit by firestorm", {61445}, &boss_ai, true, false, verbosity_all, false, false, target_location_dst, 1000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Firestorm", "[&BgXwAAA=]"),
+		//Mechanic("stood in fire", {61548}, & boss_ai, false, false, verbosity_all, false, true, target_location_dst, 5000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Volatile Fire", ""),
+		Mechanic("was hit by a meteor", {61348,61439}, &boss_ai, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Call Meteor", ""),
+		Mechanic("was hit by firestorm", {61445}, &boss_ai, true, false, verbosity_all, false, false, target_location_dst, 1000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Firestorm", ""),
 		//Water
-		Mechanic("was hit by a whirlpool", {61349,61177}, &boss_ai, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Torrential Bolt", "[&BqXvAAA=]"),
+		Mechanic("was hit by a whirlpool", {61349,61177}, &boss_ai, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Torrential Bolt", ""),
 		//TODO: Mechanic("was hit by water blades", {}, &boss_ai, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Elemental Manipulation", ""),
-		//Mechanic("stood in water", {61419}, & boss_ai, false, false, verbosity_all, false, true, target_location_dst, 5000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Volatile Waters", "[&BuvvAAA=]"),
+		//Mechanic("stood in water", {61419}, & boss_ai, false, false, verbosity_all, false, true, target_location_dst, 5000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Volatile Waters", ""),
 		//Dark
-		Mechanic("was hit by a laser", {61344,61499}, &boss_ai, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Focused Wrath", "[&BqDvAAA=]"),
+		Mechanic("was hit by a laser", {61344,61499}, &boss_ai, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Focused Wrath", ""),
 		//TODO: Mechanic("was hit by a laser blade", {}, &boss_ai, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Empathic Manipulation", ""),
 		//TODO: Mechanic("was stunned by fear", {}, &boss_ai, false, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "", ""),
 
 		//Icebrood Construct
 		Mechanic("was hit by shockwave", {57948,57472,57779}, &boss_icebrood_construct, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Ice Shock Wave", ""),
 		Mechanic("was hit by arm swing", {57516}, &boss_icebrood_construct, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Ice Arm Swing", ""),
-		Mechanic("was hit by ice orb", {57690}, &boss_icebrood_construct, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Ice Shatter", "[&BlrhAAA=]"),
+		Mechanic("was hit by ice orb", {57690}, &boss_icebrood_construct, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Ice Shatter", ""),
 		Mechanic("was hit by ice crystal", {57663}, &boss_icebrood_construct, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Ice Crystal", ""),
 		Mechanic("was hit by flail", {57678,57463}, &boss_icebrood_construct, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Ice Flail", ""),
 		Mechanic("was hit by deadly shockwave", {57832}, &boss_icebrood_construct, true, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Deadly Ice Shock Wave", ""),
 		Mechanic("was hit by arm shatter", {57729}, &boss_icebrood_construct, true, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Shatter Arm", ""),
 		
 		//Voice and Claw
-		Mechanic("was slammed", {58150}, &boss_voice_and_claw, false, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Hammer Slam", "[&BoHkAAA=]"),
-		Mechanic("was knocked back", {58132}, &boss_voice_and_claw, false, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Hammer Spin", "[&BhTjAAA=]"),
-		//not working Mechanic("was trapped", {727}, &boss_voice_and_claw, false, false, verbosity_all, false, true, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Ghostly Grasp", "[&BpbjAAA=]"), 
+		Mechanic("was slammed", {58150}, &boss_voice_and_claw, false, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Hammer Slam", ""),
+		Mechanic("was knocked back", {58132}, &boss_voice_and_claw, false, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Hammer Spin", ""),
+		//not working Mechanic("was trapped", {727}, &boss_voice_and_claw, false, false, verbosity_all, false, true, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Ghostly Grasp", ""), 
 
 		//Fraenir of Jormag
-		Mechanic("was hit by quake", {58811}, &boss_fraenir, false, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Icequake", "[&BrvlAAA=]"),
+		Mechanic("was hit by quake", {58811}, &boss_fraenir, false, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Icequake", ""),
 		Mechanic("was frozen", {58376}, &boss_fraenir, true, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Torrent of Ice", ""),
-		Mechanic("was hit by icewave", {58740}, &boss_fraenir, false, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Ice Shock Wave", "[&BnTlAAA=]"),
-		Mechanic("was hit by shockwave", {58518}, &boss_fraenir, false, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Seismic Crush", "[&BpbkAAA=]"),
-		Mechanic("was hit by flail", {58647,58501}, &boss_fraenir, false, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Ice Flail", "[&BhflAAA=]"),
+		Mechanic("was hit by icewave", {58740}, &boss_fraenir, false, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Ice Shock Wave", ""),
+		Mechanic("was hit by shockwave", {58518}, &boss_fraenir, false, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Seismic Crush", ""),
+		Mechanic("was hit by flail", {58647,58501}, &boss_fraenir, false, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Ice Flail", ""),
 		Mechanic("was hit by arm shatter", {58515}, &boss_fraenir, false, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Shatter Arm", ""),
 
 		//Boneskinner
 		Mechanic("stood in grasp", {58233}, &boss_boneskinner, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Grasp", ""),
 		Mechanic("was hit by charge", {58851}, &boss_boneskinner, true, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Charge", ""),
-		Mechanic("was launched by wind", {58546}, & boss_boneskinner, true, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Death Wind", "[&BrLkAAA=]"),
+		Mechanic("was launched by wind", {58546}, & boss_boneskinner, true, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Death Wind", ""),
 
 		//Whisper of Jormag
 		Mechanic("was hit by a slice", {59076}, &boss_whisper, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Icy Slice", ""),
-		Mechanic("was hit by a tornado", {59255}, &boss_whisper, false, false, verbosity_chart, false, true, target_location_dst, 5000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Ice Tempest", "[&BnfnAAA=]"),
-		Mechanic("has chains", {59120}, &boss_whisper, false, true, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Chains of Frost", "[&BhfnAAA=]"),
-		Mechanic("was hit by chains", {59159}, &boss_whisper, true, true, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Chains of Frost", "[&BhfnAAA=]"),
-		Mechanic("was hit by own aoe", {59102}, & boss_whisper, true, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Spreading Ice", "[&Bt7mAAA=]"),
-		Mechanic("was hit by other's aoe", {59468}, &boss_whisper, true, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Spreading Ice", "[&BkzoAAA=]"),
-		Mechanic("soaked damage", {59441}, &boss_whisper, false, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Lethal Coalescence", "[&BjHoAAA=]"),
+		Mechanic("was hit by a tornado", {59255}, &boss_whisper, false, false, verbosity_chart, false, true, target_location_dst, 5000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Ice Tempest", ""),
+		Mechanic("has chains", {59120}, &boss_whisper, false, true, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Chains of Frost", ""),
+		Mechanic("was hit by chains", {59159}, &boss_whisper, true, true, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Chains of Frost", ""),
+		Mechanic("was hit by own aoe", {59102}, & boss_whisper, true, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Spreading Ice", ""),
+		Mechanic("was hit by other's aoe", {59468}, &boss_whisper, true, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Spreading Ice", ""),
+		Mechanic("soaked damage", {59441}, &boss_whisper, false, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Lethal Coalescence", ""),
 
 		//Cold War
-		//too many procs Mechanic("was hit by icy echoes", {60354}, &boss_coldwar, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Icy Echoes", "[&BsLrAAA=]"), 
+		//too many procs Mechanic("was hit by icy echoes", {60354}, &boss_coldwar, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Icy Echoes", ""), 
 		//not working Mechanic("was frozen", {60371}, &boss_coldwar, true, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Flash Freeze", ""), 
-		Mechanic("was hit by assassins", {60308}, &boss_coldwar, true, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Call Assassins", "[&BpTrAAA=]"),
-		Mechanic("stood in flames", {60171}, &boss_coldwar, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Flame Wall", "[&BgvrAAA=]"),
-		Mechanic("was run over", {60132}, &boss_coldwar, true, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Charge!", "[&BuTqAAA=]"),
-		Mechanic("was hit by detonation", {60006}, & boss_coldwar, true, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Detonate", "[&BmbqAAA=]"),
-		Mechanic("soaked damage", {60545}, &boss_coldwar, false, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Lethal Coalescence", "[&BoHsAAA=]"),
+		Mechanic("was hit by assassins", {60308}, &boss_coldwar, true, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Call Assassins", ""),
+		Mechanic("stood in flames", {60171}, &boss_coldwar, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Flame Wall", ""),
+		Mechanic("was run over", {60132}, &boss_coldwar, true, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Charge!", ""),
+		Mechanic("was hit by detonation", {60006}, & boss_coldwar, true, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Detonate", ""),
+		Mechanic("soaked damage", {60545}, &boss_coldwar, false, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Lethal Coalescence", ""),
 	};
 	return *mechanics;
 }
