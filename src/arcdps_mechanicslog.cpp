@@ -466,9 +466,6 @@ void parseIni()
 
 void writeIni()
 {
-
-	if (!valid_mechanics_ini) return;
-
 	SI_Error rc = mechanics_ini.SetValue("log", "show", std::to_string(show_app_log).c_str());
 	rc = mechanics_ini.SetValue("chart", "show", std::to_string(show_app_chart).c_str());
 	rc = mechanics_ini.SetValue("chart", "export_path", chart_ui.export_dir.c_str());
