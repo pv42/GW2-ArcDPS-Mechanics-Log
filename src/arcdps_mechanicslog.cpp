@@ -1,6 +1,7 @@
+#include <Windows.h>
 #include <string>
 #include <vector>
-#include <Windows.h>
+#include <cstdint>
 
 #include "arcdps_datastructures.h"
 #include "helpers.h"
