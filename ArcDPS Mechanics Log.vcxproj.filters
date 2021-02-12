@@ -13,12 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
-    <Filter Include="Header Files\SimpleIni">
-      <UniqueIdentifier>{9f298fc5-6569-4f94-a2c2-1faaf4a622c7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\SimpleInI">
-      <UniqueIdentifier>{2f6e4c8f-f61e-4d98-89b3-fcc4720874f7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\imgui">
       <UniqueIdentifier>{df596d8a-d2e3-4e23-abb0-014a2c7ace04}</UniqueIdentifier>
     </Filter>
@@ -58,18 +52,6 @@
     </ClCompile>
     <ClCompile Include="src\Tracker.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\simpleini\ConvertUTF.c">
-      <Filter>Source Files\SimpleInI</Filter>
-    </ClCompile>
-    <ClCompile Include="src\simpleini\snippets.cpp">
-      <Filter>Source Files\SimpleInI</Filter>
-    </ClCompile>
-    <ClCompile Include="src\simpleini\test1.cpp">
-      <Filter>Source Files\SimpleInI</Filter>
-    </ClCompile>
-    <ClCompile Include="src\simpleini\testsi.cpp">
-      <Filter>Source Files\SimpleInI</Filter>
     </ClCompile>
     <ClCompile Include="src\LogEvent.cpp">
       <Filter>Source Files</Filter>
@@ -123,12 +105,6 @@
     </ClInclude>
     <ClInclude Include="src\Tracker.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\simpleini\SimpleIni.h">
-      <Filter>Header Files\SimpleIni</Filter>
-    </ClInclude>
-    <ClInclude Include="src\simpleini\ConvertUTF.h">
-      <Filter>Header Files\SimpleIni</Filter>
     </ClInclude>
     <ClInclude Include="src\LogEvent.h">
       <Filter>Header Files</Filter>
