@@ -1,25 +1,23 @@
 #include <Windows.h>
 #include <vector>
 #include <string>
-#include <algorithm>
 #include "simpleini\SimpleIni.h"
 
-#include "imgui.h"
-#include "imgui_panels.h"
 #include "arcdps_datastructures.h"
 #include "helpers.h"
-#include "npc_ids.h"
+#include "imgui_panels.h"
 #include "mechanics.h"
 #include "player.h"
 #include "skill_ids.h"
 #include "Tracker.h"
+#include "imgui/imgui.h"
 
 /* proto/globals */
 arcdps_exports arc_exports;
 char* arcvers;
 void dll_init(HANDLE hModule);
 void dll_exit();
-extern "C" __declspec(dllexport) void* get_init_addr(char* arcversionstr, void* imguicontext);
+extern "C" __declspec(dllexport) void* get_init_addr(char* arcversionstr, ImGuiContext* imguicontext, void* id3dd9, HMODULE new_arcdll, void* mallocfn, void* freefn);
 extern "C" __declspec(dllexport) void* get_release_addr();
 arcdps_exports* mod_init();
 uintptr_t mod_release();
@@ -27,7 +25,7 @@ uintptr_t mod_wnd(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 uintptr_t mod_combat(cbtevent* ev, ag* src, ag* dst, char* skillname, uint64_t id, uint64_t revision);
 uintptr_t mod_imgui(uint32_t not_charsel_or_loading);
 uintptr_t mod_options();
-static int changeExportPath(ImGuiTextEditCallbackData const *data);
+static int changeExportPath(const ImGuiInputTextCallbackData* data);
 void readArcExports();
 void parseIni();
 void writeIni();
@@ -89,9 +87,10 @@ void dll_exit() {
 }
 
 /* export -- arcdps looks for this exported function and calls the address it returns */
-extern "C" __declspec(dllexport) void* get_init_addr(char* arcversionstr, void* imguicontext) {
+extern "C" __declspec(dllexport) void* get_init_addr(char* arcversionstr, ImGuiContext* imguicontext, void* id3dd9, HMODULE new_arcdll, void* mallocfn, void* freefn) {
 	arcvers = arcversionstr;
-	ImGui::SetCurrentContext((ImGuiContext*)imguicontext);
+	ImGui::SetCurrentContext(imguicontext);
+	ImGui::SetAllocatorFunctions(static_cast<void*(*)(size_t sz, void* user_data)>(mallocfn), static_cast<void(*)(void* ptr, void* user_data)>(freefn));
 	return mod_init;
 }
 
@@ -107,6 +106,7 @@ arcdps_exports* mod_init()
 	/* for arcdps */
 	memset(&arc_exports, 0, sizeof(arcdps_exports));
 	arc_exports.sig = 0x81004122;//from random.org
+	arc_exports.imguivers = IMGUI_VERSION_NUM;
 	arc_exports.size = sizeof(arcdps_exports);
 	arc_exports.out_name = "Mechanics Log";
 	arc_exports.out_build = __VERSION__;
@@ -438,7 +438,7 @@ uintptr_t mod_options()
     return 0;
 }
 
-static int changeExportPath(ImGuiTextEditCallbackData const *data)
+static int changeExportPath(const ImGuiInputTextCallbackData* data)
 {
 	chart_ui.export_dir = data->Buf;
 }

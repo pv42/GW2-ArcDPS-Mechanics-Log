@@ -137,9 +137,11 @@
     </ClCompile>
     <ClCompile Include="src\arcdps_mechanicslog.cpp" />
     <ClCompile Include="src\helpers.cpp" />
-    <ClCompile Include="src\imgui.cpp" />
-    <ClCompile Include="src\imgui_demo.cpp" />
-    <ClCompile Include="src\imgui_draw.cpp" />
+    <ClCompile Include="src\imgui\imgui.cpp" />
+    <ClCompile Include="src\imgui\imgui_demo.cpp" />
+    <ClCompile Include="src\imgui\imgui_draw.cpp" />
+    <ClCompile Include="src\imgui\imgui_tables.cpp" />
+    <ClCompile Include="src\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\imgui_panels.cpp" />
     <ClCompile Include="src\LogEvent.cpp" />
     <ClCompile Include="src\MechanicEntry.cpp" />
@@ -166,9 +168,12 @@
   <ItemGroup>
     <ClInclude Include="src\arcdps_datastructures.h" />
     <ClInclude Include="src\helpers.h" />
-    <ClInclude Include="src\imconfig.h" />
-    <ClInclude Include="src\imgui.h" />
-    <ClInclude Include="src\imgui_internal.h" />
+    <ClInclude Include="src\imgui\imconfig.h" />
+    <ClInclude Include="src\imgui\imgui.h" />
+    <ClInclude Include="src\imgui\imgui_internal.h" />
+    <ClInclude Include="src\imgui\imstb_rectpack.h" />
+    <ClInclude Include="src\imgui\imstb_textedit.h" />
+    <ClInclude Include="src\imgui\imstb_truetype.h" />
     <ClInclude Include="src\imgui_panels.h" />
     <ClInclude Include="src\LogEvent.h" />
     <ClInclude Include="src\MechanicEntry.h" />
@@ -180,9 +185,6 @@
     <ClInclude Include="src\simpleini\ConvertUTF.h" />
     <ClInclude Include="src\simpleini\SimpleIni.h" />
     <ClInclude Include="src\skill_ids.h" />
-    <ClInclude Include="src\stb_rect_pack.h" />
-    <ClInclude Include="src\stb_textedit.h" />
-    <ClInclude Include="src\stb_truetype.h" />
     <ClInclude Include="src\Tracker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
