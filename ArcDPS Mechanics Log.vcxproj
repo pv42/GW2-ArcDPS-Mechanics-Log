@@ -152,6 +152,7 @@
     <ClCompile Include="src\npc_ids.cpp" />
     <ClCompile Include="src\player.cpp" />
     <ClCompile Include="src\PlayerEntry.cpp" />
+    <ClCompile Include="src\simpleini\ConvertUTF.c" />
     <ClCompile Include="src\Tracker.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +172,8 @@
     <ClInclude Include="src\npc_ids.h" />
     <ClInclude Include="src\player.h" />
     <ClInclude Include="src\PlayerEntry.h" />
+    <ClInclude Include="src\simpleini\ConvertUTF.h" />
+    <ClInclude Include="src\simpleini\SimpleIni.h" />
     <ClInclude Include="src\skill_ids.h" />
     <ClInclude Include="src\Tracker.h" />
   </ItemGroup>
