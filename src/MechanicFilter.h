@@ -1,12 +1,8 @@
 #pragma once
 
-#include "imgui.h"
-#include "PlayerEntry.h"
-#include "MechanicEntry.h"
 #include "LogEvent.h"
 #include "npc_ids.h"
-#include "helpers.h"
-#include <string>
+#include "imgui/imgui.h"
 
 class MechanicFilter
 {
