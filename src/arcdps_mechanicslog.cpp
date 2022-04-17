@@ -26,7 +26,8 @@ uintptr_t mod_release();
 uintptr_t mod_wnd(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 uintptr_t mod_combat(cbtevent* ev, ag* src, ag* dst, char* skillname, uint64_t id, uint64_t revision);
 uintptr_t mod_imgui(uint32_t not_charsel_or_loading);
-uintptr_t mod_options();
+uintptr_t mod_options_end();
+uintptr_t mod_options_windows(const char* windowname);
 
 static int changeExportPath(const ImGuiInputTextCallbackData* data);
 void readArcExports();
@@ -98,12 +99,13 @@ arcdps_exports* mod_init()
 	arc_exports.sig = 0x81004122;//from random.org
 	arc_exports.imguivers = IMGUI_VERSION_NUM;
 	arc_exports.size = sizeof(arcdps_exports);
-	arc_exports.out_name = "Mechanics Log";
-	arc_exports.out_build = __VERSION__;
+	arc_exports.out_name = "Mechanics";
+	arc_exports.out_build = __DATE__ " " __TIME__;
 	arc_exports.wnd_nofilter = mod_wnd;
 	arc_exports.combat = mod_combat;
 	arc_exports.imgui = mod_imgui;
-	arc_exports.options_end = mod_options;
+	arc_exports.options_end = mod_options_end;
+	arc_exports.options_windows = mod_options_windows;
 
 	parseIni();
 
@@ -342,15 +344,6 @@ void ShowMechanicsChart(bool* p_open)
 	}
 }
 
-void ShowMechanicsOptions(bool* p_open)
-{
-	if (show_options)
-	{
-		options_ui.draw(&tracker, "Mechanics Options", p_open, ImGuiWindowFlags_NoCollapse
-			| (!canMoveWindows() ? ImGuiWindowFlags_NoMove : 0));
-	}
-}
-
 uintptr_t mod_imgui(uint32_t not_charsel_or_loading)
 {
 	readArcExports();
@@ -375,22 +368,25 @@ uintptr_t mod_imgui(uint32_t not_charsel_or_loading)
 
 	ShowMechanicsChart(&show_app_chart);
 
-	ShowMechanicsOptions(&show_options);
+    return 0;
+}
+
+uintptr_t mod_options_end()
+{
+	options_ui.draw(&tracker);
 
     return 0;
 }
 
-uintptr_t mod_options()
+uintptr_t mod_options_windows(const char* windowname)
 {
-	if (ImGui::BeginMenu("Mechanics"))
+	if (!windowname)
 	{
 		ImGui::Checkbox("Mechanics Log", &show_app_log);
 		ImGui::Checkbox("Mechanics Chart", &show_app_chart);
-		ImGui::Checkbox("Mechanics Options", &show_options);
-		ImGui::EndMenu();
 	}
 
-    return 0;
+	return 0;
 }
 
 static int changeExportPath(const ImGuiInputTextCallbackData* data)

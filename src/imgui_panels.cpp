@@ -274,44 +274,42 @@ std::string AppChart::getDefaultExportPath()
 	return "";
 }
 
-void AppOptions::draw(Tracker* tracker, const char * title, bool * p_open, ImGuiWindowFlags flags)
+void AppOptions::draw(Tracker* tracker)
 {
-	ImGui::SetNextWindowSize(ImVec2(550, 650), ImGuiCond_FirstUseEver);
-	ImGui::Begin(title, p_open, flags);
-	
-	ImGui::Checkbox("Only show mechanics for self", &tracker->show_only_self);
-
-	ImGui::InputInt("Max mechanics in log", &tracker->max_log_events, 25);
-
-	ImGui::Checkbox("Export chart to CSV when game is closed", &tracker->export_chart_on_close);
-
-	ImGui::Separator();
-	
-	ImGui::Text("Where to show each mechanic");
-
-	ImGui::PushItemWidth(ImGui::GetWindowWidth()/3.0f);
-
-	Boss* previous_boss = nullptr;
-
-	for (auto current_mechanic = getMechanics().begin(); current_mechanic != getMechanics().end(); ++current_mechanic)
+	if (ImGui::BeginChild("Mechanics Settings", ImVec2(550, 650)))
 	{
-		if(previous_boss && previous_boss != current_mechanic->boss)
-			ImGui::Separator();
+		ImGui::Checkbox("Only show mechanics for self", &tracker->show_only_self);
 
-		ImGui::Combo(current_mechanic->getChartName().c_str(), &current_mechanic->verbosity,
-			"Hidden\0"
-			"Chart Only\0"
-			"Log only\0"
-			"Everywhere\0\0",4);
+		ImGui::InputInt("Max mechanics in log", &tracker->max_log_events, 25);
 
-		if (current_mechanic->description.length() > 0)
+		ImGui::Checkbox("Export chart to CSV when game is closed", &tracker->export_chart_on_close);
+
+		ImGui::Separator();
+
+		ImGui::Text("Where to show each mechanic");
+
+		ImGui::PushItemWidth(ImGui::GetWindowWidth() / 3.0f);
+
+		Boss* previous_boss = nullptr;
+
+		for (auto current_mechanic = getMechanics().begin(); current_mechanic != getMechanics().end(); ++current_mechanic)
 		{
-			ImGui::SameLine(); showHelpMarker(current_mechanic->description.c_str());
+			if (previous_boss && previous_boss != current_mechanic->boss)
+				ImGui::Separator();
+
+			ImGui::Combo(current_mechanic->getChartName().c_str(), &current_mechanic->verbosity,
+				"Hidden\0"
+				"Chart Only\0"
+				"Log only\0"
+				"Everywhere\0\0", 4);
+
+			if (current_mechanic->description.length() > 0)
+			{
+				ImGui::SameLine(); showHelpMarker(current_mechanic->description.c_str());
+			}
+
+			previous_boss = current_mechanic->boss;
 		}
-
-		previous_boss = current_mechanic->boss;
+		ImGui::EndChild();
 	}
-	ImGui::PopItemWidth();
-
-	ImGui::End();
 }
