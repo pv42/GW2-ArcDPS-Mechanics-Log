@@ -476,8 +476,6 @@ void writeIni()
 
 	for (auto current_mechanic = getMechanics().begin(); current_mechanic != getMechanics().end(); ++current_mechanic)
 	{
-		if (current_mechanic->verbosity == 0) continue;//hide disabled mechanics
-		
 		rc = mechanics_ini.SetValue("mechanic verbosity",
 			current_mechanic->getIniName().c_str(),
 			std::to_string(current_mechanic->verbosity).c_str());

@@ -290,26 +290,30 @@ void AppOptions::draw(Tracker* tracker)
 
 		ImGui::PushItemWidth(ImGui::GetWindowWidth() / 3.0f);
 
-		Boss* previous_boss = nullptr;
-
-		for (auto current_mechanic = getMechanics().begin(); current_mechanic != getMechanics().end(); ++current_mechanic)
+		for (const Boss* boss : bosses)
 		{
-			if (previous_boss && previous_boss != current_mechanic->boss)
-				ImGui::Separator();
-
-			ImGui::Combo(current_mechanic->getChartName().c_str(), &current_mechanic->verbosity,
-				"Hidden\0"
-				"Chart Only\0"
-				"Log only\0"
-				"Everywhere\0\0", 4);
-
-			if (current_mechanic->description.length() > 0)
+			if (boss->name == "Generic" || boss->name == "Mursaat Overseer" || boss->name == "Skorvald the Shattered" || boss->name == "Artsariiv") { continue; }
+			if (ImGui::CollapsingHeader(boss->name.c_str()))
 			{
-				ImGui::SameLine(); showHelpMarker(current_mechanic->description.c_str());
-			}
+				for (auto current_mechanic = getMechanics().begin(); current_mechanic != getMechanics().end(); ++current_mechanic)
+				{
+					if (current_mechanic->boss->name == boss->name)
+					{
+						ImGui::Combo(current_mechanic->name.c_str(), &current_mechanic->verbosity,
+							"Hidden\0"
+							"Chart Only\0"
+							"Log only\0"
+							"Everywhere\0\0", 4);
 
-			previous_boss = current_mechanic->boss;
+						if (current_mechanic->description.length() > 0)
+						{
+							ImGui::SameLine(); showHelpMarker(current_mechanic->description.c_str());
+						}
+					}
+				}
+			}
 		}
+
 		ImGui::EndChild();
 	}
 }
