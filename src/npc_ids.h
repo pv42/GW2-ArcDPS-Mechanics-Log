@@ -93,7 +93,7 @@ extern Boss boss_coldwar;
 extern Boss boss_mai_trin;
 extern Boss boss_ankka;
 extern Boss boss_minister_li;
-extern Boss boss_void_amalgamate;
+extern Boss boss_the_dragonvoid;
 extern Boss boss_watchknight_triumvirate;
 
 extern std::list<Boss*> bosses;
