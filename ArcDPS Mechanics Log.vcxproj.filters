@@ -27,17 +27,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\debug\libd3d9_arcdps_mechanics.def">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="bin\release\libd3d9_arcdps_mechanics.def">
-      <Filter>Source Files</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\arcdps_combatdemo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\arcdps_mechanicslog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -151,13 +140,5 @@
     <ClInclude Include="src\simpleini\SimpleIni.h">
       <Filter>Header Files\simpleini</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="ArcDPS Mechanics Log.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
   </ItemGroup>
 </Project>

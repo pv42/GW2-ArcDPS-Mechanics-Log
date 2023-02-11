@@ -345,6 +345,32 @@ bool requirementOnSelf(const Mechanic &current_mechanic, cbtevent* ev, ag* ag_sr
 	return ev->src_instid == ev->dst_instid;
 }
 
+bool requirementOnSelfRevealedInHarvestTemple(const Mechanic& current_mechanic, cbtevent* ev,
+							   ag* ag_src, ag* ag_dst, Player* player_src,
+							   Player* player_dst, Player* current_player)
+{
+	
+	if (!ev) return false;
+	// In Harvest Temple
+	if (!current_player->current_log_npc || *current_player->current_log_npc != 43488) return false;
+	// Applying to self
+	if (ev->src_instid != ev->dst_instid) return false;
+	// Applying, not removing
+	if (ev->is_buffremove) return false;
+	// Applying buff
+	if (!ev->buff || ev->buff_dmg != 0) return false;
+	return true;
+}
+
+bool requirementSpecificBoss(const Mechanic& current_mechanic, cbtevent* ev,
+                             ag* ag_src, ag* ag_dst, Player* player_src,
+                             Player* player_dst, Player* current_player)
+{
+	if (!current_player->current_log_npc) return false;
+	if (!current_mechanic.boss) return false;
+	return current_mechanic.boss->hasId(*current_player->current_log_npc);
+}
+
 int64_t valueDefault(const Mechanic &current_mechanic, cbtevent* ev, ag* ag_src, ag* ag_dst, Player * player_src, Player * player_dst, Player* current_player)
 {
 	return 1;
@@ -597,7 +623,7 @@ std::vector<Mechanic>& getMechanics()
 		//Boneskinner
 		Mechanic("stood in grasp", {58233}, &boss_boneskinner, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Grasp", ""),
 		Mechanic("was hit by charge", {58851}, &boss_boneskinner, true, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Charge", ""),
-		Mechanic("was launched by wind", {58546}, & boss_boneskinner, true, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Death Wind", ""),
+		Mechanic("was launched by wind", {58546}, &boss_boneskinner, true, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Death Wind", ""),
 
 		//Whisper of Jormag
 		Mechanic("was hit by a slice", {59076}, &boss_whisper, false, false, verbosity_chart, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Icy Slice", ""),
@@ -616,6 +642,55 @@ std::vector<Mechanic>& getMechanics()
 		Mechanic("was run over", {60132}, &boss_coldwar, true, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Charge!", ""),
 		Mechanic("was hit by detonation", {60006}, & boss_coldwar, true, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Detonate", ""),
 		Mechanic("soaked damage", {60545}, &boss_coldwar, false, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Lethal Coalescence", ""),
+
+		//Mai Trin
+		Mechanic().setName("hit by cone attack").setIds({65749}).setBoss(&boss_mai_trin),
+		Mechanic().setName("hit by side cone attack").setIds({66089}).setBoss(&boss_mai_trin),
+		Mechanic().setName("hit by shockwave attack").setIds({65031, 67866}).setBoss(&boss_mai_trin),
+		Mechanic().setName("stood in puddle").setIds({64044, 67832}).setBoss(&boss_mai_trin),
+		Mechanic().setName("hit by yellow circle").setIds({66568}).setBoss(&boss_mai_trin),
+		Mechanic().setName("received Exposed stack").setIds({64936}).setSpecialRequirement(requirementSpecificBoss).setBoss(&boss_mai_trin),
+		Mechanic().setName("was selected for green").setFailIfHit(false).setIds({65900, 67831}).setBoss(&boss_mai_trin),
+		Mechanic().setName("received green debuff").setFailIfHit(false).setIds({67872}).setBoss(&boss_mai_trin),
+		Mechanic().setName("downed by green").setIds({67954}).setBoss(&boss_mai_trin),
+		Mechanic().setName("selected for bomb").setFailIfHit(false).setIds({67856}).setBoss(&boss_mai_trin),
+
+		//Ankka
+		Mechanic().setName("hit by hands AoE").setIds({66246}).setBoss(&boss_ankka),
+		Mechanic().setName("hit by pull AoE").setIds({67160}).setBoss(&boss_ankka),
+		Mechanic().setName("hit by in between sections AoE").setIds({66728}).setBoss(&boss_ankka),
+		Mechanic().setName("hit by Kraits").setIds({66824}).setBoss(&boss_ankka),
+		Mechanic().setName("hit by Quaggan Explosion").setIds({64669}).setBoss(&boss_ankka),
+
+		//Minister Li
+		Mechanic().setName("hit by wave").setIds({64952, 67825}).setBoss(&boss_minister_li),
+		Mechanic().setName("hit by burst").setIds({66465, 65378}).setBoss(&boss_minister_li),
+		Mechanic().setName("hit by rush").setIds({66090, 64619, 67824, 67943}).setBoss(&boss_minister_li),
+		Mechanic().setName("got bomb").setIds({64277, 67982}).setBoss(&boss_minister_li),
+		Mechanic().setName("was selected for green").setIds({64300, 68004}).setBoss(&boss_minister_li),
+		Mechanic().setName("stood in flames").setIds({65608, 68028}).setBoss(&boss_minister_li),
+		Mechanic().setName("overlapped red circles").setIds({65243}).setBoss(&boss_minister_li),
+		Mechanic().setName("was fixated").setIds({66140}).setSpecialRequirement(requirementSpecificBoss).setBoss(&boss_minister_li),
+		Mechanic().setName("hit by bladestorm").setIds({63838, 63550, 65569}).setBoss(&boss_minister_li),
+		Mechanic().setName("hit by big laser").setIds({64016}).setBoss(&boss_minister_li),
+		Mechanic().setName("received Debilitated stack").setIds({67972}).setSpecialRequirement(requirementSpecificBoss).setBoss(&boss_minister_li),
+		Mechanic().setName("received Infirmity stack").setIds({67965}).setSpecialRequirement(requirementSpecificBoss).setBoss(&boss_minister_li),
+		Mechanic().setName("received Exposed stack").setIds({64936}).setSpecialRequirement(requirementSpecificBoss).setBoss(&boss_minister_li),
+
+
+		//Harvest Temple
+		Mechanic().setName("received Void debuff").setIds({64524}).setBoss(&boss_the_dragonvoid),
+		Mechanic().setName("hit by Void").setIds({66566}).setBoss(&boss_the_dragonvoid),
+		Mechanic().setName("hit by Jormag breath").setIds({65517, 66216, 67607}).setBoss(&boss_the_dragonvoid),
+		Mechanic().setName("hit by Primordus Slam").setIds({64527}).setBoss(&boss_the_dragonvoid),
+		Mechanic().setName("hit by Crystal Barrage").setIds({66790}).setBoss(&boss_the_dragonvoid),
+		Mechanic().setName("hit by Kralkatorrik Beam").setIds({65017}).setBoss(&boss_the_dragonvoid),
+		Mechanic().setName("hit by Modremoth Shockwave").setIds({64810}).setBoss(&boss_the_dragonvoid),
+		Mechanic().setName("hit by Zhaitan Scream").setIds({66658}).setBoss(&boss_the_dragonvoid),
+		Mechanic().setName("hit by Whirlpool").setIds({65252}).setBoss(&boss_the_dragonvoid),
+		Mechanic().setName("hit by Soo-Won Tsunami").setIds({64748, 66489}).setBoss(&boss_the_dragonvoid),
+		Mechanic().setName("hit by Soo-Won Claw").setIds({63588}).setBoss(&boss_the_dragonvoid),
+		Mechanic().setName("was revealed").setFailIfHit(false).setIds({890}).setSpecialRequirement(requirementOnSelfRevealedInHarvestTemple).setBoss(&boss_the_dragonvoid),
 	};
 	return *mechanics;
 }

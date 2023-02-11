@@ -32,6 +32,7 @@ public:
 	std::list<PlayerEntry> player_entries;
 	
 	Boss* boss_data = nullptr;
+	uint64_t current_log_npc = 0;
 	int64_t start_time = 0;
 
 	PlayerEntry* getPlayerEntry(const ag* new_player);
@@ -48,6 +49,7 @@ public:
 
 	void processCombatEnter(const cbtevent* ev, ag* new_agent);
 	void processCombatExit(const cbtevent* ev, ag* new_agent);
+	void processLogNpcUpdate(uint64_t species_id);
 	void processMechanic(const cbtevent* ev, PlayerEntry* new_player_src, PlayerEntry* new_player_dst, Mechanic* new_mechanic, int64_t value);
 
 	int Tracker::getElapsedTime(uint64_t const &current_time) noexcept;

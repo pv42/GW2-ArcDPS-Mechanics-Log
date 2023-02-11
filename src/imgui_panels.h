@@ -36,7 +36,7 @@ struct AppChart
 
 struct AppOptions
 {
-	void    draw(Tracker* tracker, const char* title, bool* p_open, ImGuiWindowFlags flags);
+	void draw(Tracker* tracker);
 };
 
 constexpr float getChartColumnWidth(float window_width);

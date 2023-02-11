@@ -74,13 +74,71 @@ Boss boss_arkk = Boss().setIds({ 0x455F }).setHealth(9942250).setName("Arkk");//
 //Sunqua Peak
 Boss boss_ai = Boss().setIds({ 23254 }).setHealth(14905666).setName("Sorrowful Spellcaster");
 
-//Strike Missions
+//IBS Strike Missions
 Boss boss_icebrood_construct = Boss().setIds({ 22154, 22436 }).setTimer(12 * 60 * 1000).setHealth(11698890).setName("Icebrood Construct");
 Boss boss_voice_and_claw = Boss().setIds({ 22343, 22481, 22315 }).setTimer(10 * 60 * 1000).setHealth(8258040).setName("Voice of the Fallen and Claw of the Fallen");
 Boss boss_fraenir = Boss().setIds({ 22492, 22436 }).setTimer(10 * 60 * 1000).setHealth(12387060).setName("Fraenir of Jormag");
 Boss boss_boneskinner = Boss().setIds({22521}).setTimer(10 * 60 * 1000).setHealth(12387060).setName("Boneskinner");
 Boss boss_whisper = Boss().setIds({ 22711 }).setTimer(10 * 60 * 1000).setHealth(24774120).setName("Whisper of Jormag");
 Boss boss_coldwar = Boss().setIds({ 22836 }).setTimer(7 * 60 * 1000).setHealth(17892420).setName("Varinia Stormsounder");
+
+//EoD Strike Missions
+Boss boss_mai_trin = Boss()
+                        .setName("Mai Trin")
+                        .setIds({
+                            // MaiTrinStrike
+                            24033,
+                            // EchoOfScarletBriarNM
+                            24768,
+                            // EchoOfScarletBriarCM
+                            25247,
+                        });
+Boss boss_ankka = Boss().setName("Ankka").setIds({23957});
+Boss boss_minister_li = Boss()
+                            .setName("Minister Li")
+                            .setIds({
+                                // MinisterLi
+                                24485,
+                                // MinisterLiCM
+                                24266,
+                                // TheSniper
+                                23612,
+                                // TheSniperCM
+                                25259,
+                                // TheMechRider
+                                24660,
+                                // TheMechRiderCM
+                                25271,
+                                // TheEnforcer
+                                24261,
+                                // TheEnforcerCM
+                                25236,
+                                // TheRitualist
+                                23618,
+                                // TheRitualistCM
+                                25242,
+                                // TheMindblade
+                                24254,
+                                // TheMindbladeCM
+                                25280,
+                            });
+Boss boss_the_dragonvoid = Boss().setName("The Dragonvoid").setIds({43488});
+Boss boss_watchknight_triumvirate = Boss()
+                                        .setName("Watchknight Triumvirate")
+                                        .setIds({
+                                            // PrototypeVermilion
+                                            25413,
+                                            // PrototypeArsenite
+                                            25415,
+                                            // PrototypeIndigo
+                                            25419,
+                                            // PrototypeVermilionCM
+                                            25414,
+                                            // PrototypeArseniteCM
+                                            25416,
+                                            // PrototypeIndigoCM
+                                            25423,
+                                        });
 
 std::list<Boss*> bosses =
 {
@@ -119,4 +177,9 @@ std::list<Boss*> bosses =
 	&boss_boneskinner,
 	&boss_whisper,
 	&boss_coldwar,
+    &boss_mai_trin,
+    &boss_ankka,
+    &boss_minister_li,
+    &boss_the_dragonvoid,
+    &boss_watchknight_triumvirate,
 };
