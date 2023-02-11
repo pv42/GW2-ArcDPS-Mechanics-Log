@@ -115,7 +115,7 @@ arcdps_exports* mod_init()
 /* release mod -- return ignored */
 uintptr_t mod_release()
 {
-    if(tracker.export_chart_on_close) chart_ui.writeToDisk(&tracker);
+	if(tracker.export_chart_on_close) chart_ui.writeToDisk(&tracker);
 	tracker.resetAllPlayerStats();
 	writeIni();
 	return 0;
@@ -193,7 +193,7 @@ uintptr_t mod_combat(cbtevent* ev, ag* src, ag* dst, char* skillname, uint64_t i
 
 	/* ev is null. dst will only be valid on tracking add. skillname will also be null */
 	if (!ev)
-    {
+	{
 		if (src)
 		{
 			/* notify tracking change */
@@ -216,94 +216,84 @@ uintptr_t mod_combat(cbtevent* ev, ag* src, ag* dst, char* skillname, uint64_t i
 
 	/* combat event. skillname may be null. non-null skillname will remain static until module is unloaded. refer to evtc notes for complete detail */
 	else
-    {
+	{
 
 		/* common */
 
 		/* statechange */
 		if (ev->is_statechange)
-        {
-            if(ev->is_statechange==CBTS_ENTERCOMBAT)
-            {
+		{
+			switch(ev->is_statechange)
+			{
+			case CBTS_ENTERCOMBAT:
 				tracker.processCombatEnter(ev, src);
-            }
-
-            else if(ev->is_statechange==CBTS_EXITCOMBAT)
-            {
+				break;
+			case CBTS_EXITCOMBAT:
 				tracker.processCombatExit(ev, src);
-            }
-
-            //if rally
-            else if(ev->is_statechange==CBTS_CHANGEUP)//TODO: make these into process functions in tracker.cpp
-            {
-                if(current_entry = tracker.getPlayerEntry(src))
-                {
-                    current_entry->rally();
-                }
-            }
-
-            //if dead
-            else if(ev->is_statechange==CBTS_CHANGEDEAD)
-            {
-                if(current_entry = tracker.getPlayerEntry(src))
-                {
-                    current_entry->dead();
-                }
-            }
-
-            //if downed
-            else if(ev->is_statechange==CBTS_CHANGEDOWN)
-            {
-                if(current_entry = tracker.getPlayerEntry(src))
-                {
-                    current_entry->down();
-                }
-            }
-            //if health update
-            else if(ev->is_statechange==CBTS_MAXHEALTHUPDATE)
-            {
-				
-            }
+				break;
+			case CBTS_CHANGEUP:
+				//TODO: make these into process functions in tracker.cpp
+				if((current_entry = tracker.getPlayerEntry(src)))
+				{
+					current_entry->rally();
+				}
+				break;
+			case CBTS_CHANGEDEAD:
+				if((current_entry = tracker.getPlayerEntry(src)))
+				{
+					current_entry->dead();
+				}
+				break;
+			case CBTS_CHANGEDOWN:
+				if((current_entry = tracker.getPlayerEntry(src)))
+				{
+					current_entry->down();
+				}
+				break;
+			case CBTS_LOGNPCUPDATE:
+				tracker.processLogNpcUpdate(ev->src_agent);
+				break;
+			}
 		}
 
 		/* activation */
 		else if (ev->is_activation)
-        {
+		{
 
 		}
 
 		/* buff remove */
 		else if (ev->is_buffremove)
-        {
-            if (ev->skillid==BUFF_STABILITY)//if it's stability
-            {
-                if(current_entry = tracker.getPlayerEntry(dst))
-                {
-                    current_entry->setStabTime(ev->time+ms_per_tick);//cut the ending time of stab early
-                }
-            }
-            else if (ev->skillid==BUFF_VAPOR_FORM//vapor form manual case
-                     || ev->skillid==BUFF_ILLUSION_OF_LIFE//Illusion of Life manual case
-                     )
-            {
-                if(current_entry = tracker.getPlayerEntry(dst))
-                {
-                    current_entry->fixDoubleDown();
-                }
-            }
+		{
+			if (ev->skillid==BUFF_STABILITY)//if it's stability
+			{
+				if(current_entry = tracker.getPlayerEntry(dst))
+				{
+					current_entry->setStabTime(ev->time+ms_per_tick);//cut the ending time of stab early
+				}
+			}
+			else if (ev->skillid==BUFF_VAPOR_FORM//vapor form manual case
+					 || ev->skillid==BUFF_ILLUSION_OF_LIFE//Illusion of Life manual case
+					 )
+			{
+				if(current_entry = tracker.getPlayerEntry(dst))
+				{
+					current_entry->fixDoubleDown();
+				}
+			}
 
 		}
 
 		/* buff */
 		else if (ev->buff)
-        {
-            if (ev->skillid==BUFF_STABILITY)//if it's stability
-            {
-                if(current_entry = tracker.getPlayerEntry(dst))
-                {
-                    current_entry->setStabTime(ev->time+ev->value+ms_per_tick);//add prediction of when new stab will end
-                }
-            }
+		{
+			if (ev->skillid==BUFF_STABILITY)//if it's stability
+			{
+				if(current_entry = tracker.getPlayerEntry(dst))
+				{
+					current_entry->setStabTime(ev->time+ev->value+ms_per_tick);//add prediction of when new stab will end
+				}
+			}
 		}
 
 		if(ev->result != CBTR_INTERRUPT && ev->result != CBTR_BLIND)
@@ -368,14 +358,14 @@ uintptr_t mod_imgui(uint32_t not_charsel_or_loading)
 
 	ShowMechanicsChart(&show_app_chart);
 
-    return 0;
+	return 0;
 }
 
 uintptr_t mod_options_end()
 {
 	options_ui.draw(&tracker);
 
-    return 0;
+	return 0;
 }
 
 uintptr_t mod_options_windows(const char* windowname)

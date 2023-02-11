@@ -345,6 +345,23 @@ bool requirementOnSelf(const Mechanic &current_mechanic, cbtevent* ev, ag* ag_sr
 	return ev->src_instid == ev->dst_instid;
 }
 
+bool requirementOnSelfRevealedInHarvestTemple(const Mechanic& current_mechanic, cbtevent* ev,
+							   ag* ag_src, ag* ag_dst, Player* player_src,
+							   Player* player_dst, Player* current_player)
+{
+	
+	if (!ev) return false;
+	// In Harvest Temple
+	if (!current_player->current_log_npc || *current_player->current_log_npc != 43488) return false;
+	// Applying to self
+	if (ev->src_instid != ev->dst_instid) return false;
+	// Applying, not removing
+	if (ev->is_buffremove) return false;
+	// Applying buff
+	if (!ev->buff || ev->buff_dmg != 0) return false;
+	return true;
+}
+
 int64_t valueDefault(const Mechanic &current_mechanic, cbtevent* ev, ag* ag_src, ag* ag_dst, Player * player_src, Player * player_dst, Player* current_player)
 {
 	return 1;
@@ -616,6 +633,20 @@ std::vector<Mechanic>& getMechanics()
 		Mechanic("was run over", {60132}, &boss_coldwar, true, false, verbosity_all, true, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Charge!", ""),
 		Mechanic("was hit by detonation", {60006}, & boss_coldwar, true, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Detonate", ""),
 		Mechanic("soaked damage", {60545}, &boss_coldwar, false, false, verbosity_all, false, false, target_location_dst, 2000, 0, -1, -1, ACTV_NONE, CBTB_NONE, true, true, true, requirementDefault, valueDefault, "Lethal Coalescence", ""),
+
+		//Harvest Temple
+		Mechanic().setName("received Void debuff").setIds({64524}).setBoss(&boss_void_amalgamate),
+		Mechanic().setName("hit by Void").setIds({66566}).setBoss(&boss_void_amalgamate),
+		Mechanic().setName("hit by Jormag breath").setIds({65517, 66216, 67607}).setBoss(&boss_void_amalgamate),
+		Mechanic().setName("hit by Primordus Slam").setIds({64527}).setBoss(&boss_void_amalgamate),
+		Mechanic().setName("hit by Crystal Barrage").setIds({66790}).setBoss(&boss_void_amalgamate),
+		Mechanic().setName("hit by Kralkatorrik Beam").setIds({65017}).setBoss(&boss_void_amalgamate),
+		Mechanic().setName("hit by Modremoth Shockwave").setIds({64810}).setBoss(&boss_void_amalgamate),
+		Mechanic().setName("hit by Zhaitan Scream").setIds({66658}).setBoss(&boss_void_amalgamate),
+		Mechanic().setName("hit by Whirlpool").setIds({65252}).setBoss(&boss_void_amalgamate),
+		Mechanic().setName("hit by Soo-Won Tsunami").setIds({64748, 66489}).setBoss(&boss_void_amalgamate),
+		Mechanic().setName("hit by Soo-Won Claw").setIds({63588}).setBoss(&boss_void_amalgamate),
+		Mechanic().setName("was revealed").setFailIfHit(false).setIds({890}).setSpecialRequirement(requirementOnSelfRevealedInHarvestTemple).setBoss(&boss_void_amalgamate),
 	};
 	return *mechanics;
 }

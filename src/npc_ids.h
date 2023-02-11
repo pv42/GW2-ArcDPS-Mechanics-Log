@@ -89,4 +89,11 @@ extern Boss boss_boneskinner;
 extern Boss boss_whisper;
 extern Boss boss_coldwar;
 
+//EoD Strike Missions
+extern Boss boss_mai_trin;
+extern Boss boss_ankka;
+extern Boss boss_minister_li;
+extern Boss boss_void_amalgamate;
+extern Boss boss_watchknight_triumvirate;
+
 extern std::list<Boss*> bosses;
