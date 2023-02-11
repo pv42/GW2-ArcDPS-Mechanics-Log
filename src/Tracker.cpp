@@ -81,6 +81,7 @@ bool Tracker::addPlayer(ag* src, ag* dst)
 	if (!new_entry)
 	{
 		players.push_back(Player(name, account, id, is_self));
+		players.back().current_log_npc = &current_log_npc;
 		player_entries.push_back(PlayerEntry(&players.back()));
 	}
 	else//player tracked
@@ -237,8 +238,14 @@ void Tracker::processCombatExit(const cbtevent* ev, ag* new_agent)
 		{
 			addPull(boss_data);
 			boss_data = nullptr;
+			current_log_npc = 0;
 		}
 	}
+}
+
+void Tracker::processLogNpcUpdate(uint64_t species_id)
+{
+	current_log_npc = species_id;
 }
 
 void Tracker::processMechanic(const cbtevent* ev, PlayerEntry* new_player_src, PlayerEntry* new_player_dst, Mechanic* new_mechanic, int64_t value)
