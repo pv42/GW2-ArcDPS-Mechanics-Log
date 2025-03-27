@@ -33,6 +33,16 @@ void PlayerEntry::addMechanicEntry(uint64_t new_time, Mechanic * new_mechanic, B
 
 		if (it->last_hit_time < new_time)it->last_hit_time = new_time;
 	}
+
+	if (new_mechanic->ids[0] == MECHANIC_URA_DETERRENCE)
+	{
+		holding_shard = true;
+	} 
+	else if (new_mechanic->ids[0] == MECHANIC_URA_BLOODSTONE_SATURATION)
+	{
+		holding_shard = false;
+		shard_last_used = new_time;
+	}
 }
 
 void PlayerEntry::addPull(Boss * new_boss)
@@ -127,11 +137,18 @@ std::string PlayerEntry::toString()
 void PlayerEntry::combatEnter()
 {
 	player->in_combat = true;
+
+	holding_shard = false;
+	shard_last_used = UINT32_MAX;
+
 }
 
 void PlayerEntry::combatExit()
 {
 	player->in_combat = false;
+
+	holding_shard = false;
+	shard_last_used = UINT32_MAX;
 }
 
 void PlayerEntry::setStabTime(uint64_t new_stab_time)

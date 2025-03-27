@@ -190,7 +190,7 @@ void AppChart::draw(Tracker* tracker, const char* title, bool* p_open, ImGuiWind
 		current_mechanic_fail_count = 0;
     }
 	ImGui::PopItemWidth();
-    ImGui::EndChild();
+	ImGui::EndChild();
     ImGui::End();
 }
 
@@ -274,6 +274,74 @@ std::string AppChart::getDefaultExportPath()
 	return "";
 }
 
+void SquadUI::draw(Tracker* tracker, const char* title, bool* p_open, ImGuiWindowFlags flags, bool show_all)
+{
+	if (tracker->current_log_npc != 26712) { return; }
+	const ImGuiStyle& style = ImGui::GetStyle();
+	const int height = (tracker->player_entries.size() + 1) * ImGui::GetTextLineHeightWithSpacing() + style.WindowPadding.y * 2 + style.FramePadding.y * 2 - style.ItemSpacing.y;
+	
+	
+	ImGui::SetNextWindowSize(ImVec2(500, 400), ImGuiCond_FirstUseEver);
+	ImGui::SetNextWindowSizeConstraints(ImVec2(100, height), ImVec2(1000, height));
+	ImGui::Begin(title, p_open, flags);
+
+	const float window_width = ImGui::GetWindowContentRegionWidth();
+
+
+	Player* current_player = nullptr;
+
+	const uint64_t timeGotTime = (uint64_t)timeGetTime();
+	const uint64_t current_time = timeGotTime;
+
+	for (auto current_entry = tracker->player_entries.begin(); current_entry != tracker->player_entries.end(); ++current_entry)
+	{
+		current_player = current_entry->player;
+		if (!current_player) continue;
+		if (!current_player->in_squad) continue;
+
+		ImGui::GetFrameHeightWithSpacing();
+		ImGui::Text(current_player->name.c_str());
+
+		const uint64_t used_last = (current_entry->shard_last_used) & UINT32_MAX;
+		
+
+		ImGui::SameLine(getChartColumnLoc(window_width, 2));
+		
+		bool on_cd =  used_last + 45000 > current_time && used_last != UINT32_MAX;
+		uint64_t cd = used_last + 45000 - current_time;
+
+		if (current_entry->holding_shard)
+		{
+			if (on_cd)
+			{
+				ImGui::PushStyleColor(ImGuiCol_Text, tracker->both_col.Value);
+				ImGui::Text("Saturated & Bloodstone (%d.%01ds)", cd / 1000,  (cd % 1000) / 100);
+				ImGui::PopStyleColor();
+			}
+			else
+			{
+				ImGui::PushStyleColor(ImGuiCol_Text, tracker->bloodstone_col.Value);
+				ImGui::Text("Bloodstone");
+				ImGui::PopStyleColor();
+			}
+		}
+		else
+		{
+			if (on_cd)
+			{
+				ImGui::PushStyleColor(ImGuiCol_Text, tracker->saturated_col.Value);
+				ImGui::Text("Saturated (%d.%01ds)", cd / 1000, (cd % 1000) / 100);
+				ImGui::PopStyleColor();
+			}
+			else
+			{
+				ImGui::Text("Can pickup");
+			}
+		}
+	}
+	ImGui::End();
+}
+
 void AppOptions::draw(Tracker* tracker)
 {
 	if (ImGui::BeginChild("Mechanics Settings", ImVec2(550, 650)))
@@ -283,6 +351,14 @@ void AppOptions::draw(Tracker* tracker)
 		ImGui::InputInt("Max mechanics in log", &tracker->max_log_events, 25);
 
 		ImGui::Checkbox("Export chart to CSV when game is closed", &tracker->export_chart_on_close);
+
+		ImGui::Separator();
+
+		ImGui::Text("Bloodstone Tracker Color");
+
+		ImGui::ColorEdit4("Bloodstone", &tracker->bloodstone_col.Value.x, ImGuiColorEditFlags_NoInputs);
+		ImGui::ColorEdit4("Saturated", &tracker->saturated_col.Value.x, ImGuiColorEditFlags_NoInputs);
+		ImGui::ColorEdit4("Saturated & Bloodstone", &tracker->both_col.Value.x, ImGuiColorEditFlags_NoInputs);
 
 		ImGui::Separator();
 

@@ -40,4 +40,8 @@ struct PlayerEntry
 	void combatEnter();
 	void combatExit();
 	void setStabTime(uint64_t new_stab_time);
+
+	// ura specials 
+	bool holding_shard = false;
+	uint64_t shard_last_used = 0;
 };

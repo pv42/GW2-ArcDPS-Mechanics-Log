@@ -12,6 +12,7 @@
 #include "LogEvent.h"
 #include "MechanicEntry.h"
 #include "PlayerEntry.h"
+#include "imgui/imgui.h"
 
 class Tracker
 {
@@ -46,6 +47,10 @@ public:
 	void clearLog();
 	uint16_t getMechanicsTotal();
 	uint8_t getPlayerNumInCombat();
+
+	ImColor bloodstone_col;
+	ImColor saturated_col;
+	ImColor both_col;
 
 	void processCombatEnter(const cbtevent* ev, ag* new_agent);
 	void processCombatExit(const cbtevent* ev, ag* new_agent);

@@ -6,6 +6,9 @@
 #include "MechanicFilter.h"
 #include "imgui/imgui.h"
 
+// timeGetTime
+#pragma comment(lib, "winmm.lib")
+
 struct AppLog
 {
 	MechanicFilter filter;
@@ -32,6 +35,10 @@ struct AppChart
 	void exportData(Tracker* tracker);
 	void writeToDisk(Tracker* tracker);
 	std::string getDefaultExportPath();
+};
+
+struct SquadUI {
+	void draw(Tracker* tracker, const char* title, bool* p_open, ImGuiWindowFlags flags, bool show_all);
 };
 
 struct AppOptions

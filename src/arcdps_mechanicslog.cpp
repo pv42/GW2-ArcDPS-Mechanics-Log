@@ -57,6 +57,11 @@ AppLog log_ui;
 bool show_app_chart = false;
 AppChart chart_ui;
 
+bool show_ura_window = false;
+
+
+SquadUI ura_window;
+
 bool show_options = false;
 AppOptions options_ui;
 
@@ -99,7 +104,7 @@ arcdps_exports* mod_init()
 	arc_exports.sig = 0x81004122;//from random.org
 	arc_exports.imguivers = IMGUI_VERSION_NUM;
 	arc_exports.size = sizeof(arcdps_exports);
-	arc_exports.out_name = "Mechanics";
+	arc_exports.out_name = "Mechanics + Ura";
 	arc_exports.out_build = __DATE__ " " __TIME__;
 	arc_exports.wnd_nofilter = mod_wnd;
 	arc_exports.combat = mod_combat;
@@ -334,6 +339,15 @@ void ShowMechanicsChart(bool* p_open)
 	}
 }
 
+void ShowUraWindow(bool* p_open)
+{
+	if (show_ura_window)
+	{
+		ura_window.draw(&tracker, "Bloodstone Tracker", p_open, ImGuiWindowFlags_NoCollapse
+			| (!canMoveWindows() ? ImGuiWindowFlags_NoMove : 0), arc_clicklock_altui);
+	}
+}
+
 uintptr_t mod_imgui(uint32_t not_charsel_or_loading)
 {
 	readArcExports();
@@ -358,6 +372,8 @@ uintptr_t mod_imgui(uint32_t not_charsel_or_loading)
 
 	ShowMechanicsChart(&show_app_chart);
 
+	ShowUraWindow(&show_ura_window);
+
 	return 0;
 }
 
@@ -374,6 +390,7 @@ uintptr_t mod_options_windows(const char* windowname)
 	{
 		ImGui::Checkbox("Mechanics Log", &show_app_log);
 		ImGui::Checkbox("Mechanics Chart", &show_app_chart);
+		ImGui::Checkbox("Bloodstone Tracker", &show_ura_window);
 	}
 
 	return 0;
@@ -448,6 +465,17 @@ void parseIni()
 		
 		current_mechanic->setVerbosity(std::stoi(pszValue));
 	}
+
+	pszValue = mechanics_ini.GetValue("ura", "show", "0");
+	show_ura_window = std::stoi(pszValue);
+
+	pszValue = mechanics_ini.GetValue("ura", "bloodstone_color", "4283635957"); // 0xFF5318F5 
+	tracker.bloodstone_col = ImColor(std::stoul(pszValue));
+	pszValue = mechanics_ini.GetValue("ura", "saturated_color", "4290085154"); // 0xFFB58122 
+	tracker.saturated_col = ImColor(std::stoul(pszValue));
+	pszValue = mechanics_ini.GetValue("ura", "both_color", "4290838743"); // 0xFFC100D7 
+	tracker.both_col = ImColor(std::stoul(pszValue));
+
 	has_read_ini = true;
 }
 
@@ -471,6 +499,12 @@ void writeIni()
 			std::to_string(current_mechanic->verbosity).c_str());
 
 	}
+
+	rc = mechanics_ini.SetValue("ura", "show", std::to_string(show_ura_window).c_str());
+
+	rc = mechanics_ini.SetValue("ura", "bloodstone_color", std::to_string(ImU32(tracker.bloodstone_col)).c_str());
+	rc = mechanics_ini.SetValue("ura", "saturated_color", std::to_string(ImU32(tracker.saturated_col)).c_str());
+	rc = mechanics_ini.SetValue("ura", "both_color", std::to_string(ImU32(tracker.both_col)).c_str());
 
 	rc = mechanics_ini.SaveFile("addons\\arcdps\\arcdps_mechanics.ini");
 }
