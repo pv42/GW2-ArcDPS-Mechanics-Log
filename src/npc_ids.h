@@ -68,6 +68,9 @@ extern Boss boss_sabir;
 extern Boss boss_qadim2;
 extern Boss boss_fotm_generic;
 
+//W8
+extern Boss boss_ura;
+
 //Nightmare
 extern Boss boss_mama;
 extern Boss boss_siax;

@@ -691,6 +691,10 @@ std::vector<Mechanic>& getMechanics()
 		Mechanic().setName("hit by Soo-Won Tsunami").setIds({64748, 66489}).setBoss(&boss_the_dragonvoid),
 		Mechanic().setName("hit by Soo-Won Claw").setIds({63588}).setBoss(&boss_the_dragonvoid),
 		Mechanic().setName("was revealed").setFailIfHit(false).setIds({890}).setSpecialRequirement(requirementOnSelfRevealedInHarvestTemple).setBoss(&boss_the_dragonvoid),
+
+		// Ura
+		Mechanic().setName("picked up bloodstone").setFailIfHit(false).setIds({ MECHANIC_URA_DETERRENCE }).setBoss(&boss_ura),
+		Mechanic().setName("used bloodstone").setFailIfHit(false).setIds({ MECHANIC_URA_BLOODSTONE_SATURATION }).setBoss(&boss_ura),
 	};
 	return *mechanics;
 }

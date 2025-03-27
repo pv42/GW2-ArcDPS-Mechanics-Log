@@ -60,6 +60,8 @@ Boss boss_qadim = Boss().setIds({ 20934 }).setTimer(13 * 60 * 1000).setHealth(19
 Boss boss_adina = Boss().setIds({ 22006 }).setTimer(8 * 60 * 1000).setHealth(22611300).setName("Adina");
 Boss boss_sabir = Boss().setIds({ 21964 }).setHealth(29493000).setName("Sabir");
 Boss boss_qadim2 = Boss().setIds({ 22000 }).setTimer(12 * 60 * 1000).setHealth(47188800).setName("Qadim the Peerless");
+//W8
+Boss boss_ura = Boss().setIds({ 26712 }).setTimer(10 * 60 * 1000).setHealth(61345440).setName("Ura the Steamshrieker");
 
 //FOTM
 Boss boss_fotm_generic = Boss().setName("FotM Generic");
@@ -182,4 +184,5 @@ std::list<Boss*> bosses =
     &boss_minister_li,
     &boss_the_dragonvoid,
     &boss_watchknight_triumvirate,
+    &boss_ura
 };
